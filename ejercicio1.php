@@ -5,7 +5,24 @@
 <?php
 if($_POST){
     $planeta= $_POST['planeta'];
-echo $planeta;
+
+
+$SistemaSolar = array(
+    "sol" => "1",
+    "mercurio" => "2",
+    "venus" => "3",
+    "tierra" => "4",
+    "jupiter" => "5",
+    "saturno" => "6",
+    "urano" => "7",
+    "neptuno" => "8"
+); 
+
+foreach ($SistemaSolar as $key => $value) {
+    if ($value == $planeta){
+        echo "tu planeta es $key";
+    }; 
+}
 
 }
 
@@ -24,6 +41,7 @@ echo $planeta;
         <h1>SISTEMA SOLAR</h1>
         <label for="input">Busca tu planeta favorito</label> <br>
         <input type="text" id="input" name="planeta">
+        <?php echo "tu planeta esta en la posicion ".$SistemaSolar[$planeta]; ?>
         
     </form>
 </body>
